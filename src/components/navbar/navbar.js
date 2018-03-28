@@ -112,7 +112,7 @@ class Navbar extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" noWrap>
-              Mini variant drawer
+              @2.0
             </Typography>
           </Toolbar>
         </AppBar>
@@ -135,7 +135,7 @@ class Navbar extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
+          <Typography noWrap>{'This is @2.0'}</Typography>
         </main>
       </div>
     );
