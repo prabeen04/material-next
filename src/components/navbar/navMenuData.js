@@ -19,30 +19,30 @@ export const mailFolderListItems = (
       <ListItemText primary="Home" />
     </ListItem>
     </Link>
-    <ListItem button>
+    <Link to='/pages'><ListItem button>
       <ListItemIcon>
         <InboxIcon />
       </ListItemIcon>
       <ListItemText primary="Pages" />
-    </ListItem>
-    <ListItem button>
+    </ListItem></Link>
+    <Link to='/forms'><ListItem button>
       <ListItemIcon>
         <StarIcon />
       </ListItemIcon>
       <ListItemText primary="Forms" />
-    </ListItem>
-    <ListItem button>
+    </ListItem></Link>
+    <Link to='/list'> <ListItem button>
       <ListItemIcon>
         <SendIcon />
       </ListItemIcon>
       <ListItemText primary="Lists" />
-    </ListItem>
-    <ListItem button>
+    </ListItem></Link>
+    <Link to='/dialog'><ListItem button>
       <ListItemIcon>
         <DraftsIcon />
       </ListItemIcon>
       <ListItemText primary="Dialogs" />
-    </ListItem>
+    </ListItem></Link>
   </div>
 );
 

@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { Route, Switch, Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import Home from '../../container/home/home';
+import Chart from '../../container/chart/chart';
+import Dialog from '../../container/dialogs/dialog';
+import Calendar from '../../container/calendar/calendar';
+import Forms from '../../container/forms/forms';
 import NotFound from '../../container/NotFound/notFound';
 import classNames from 'classnames';
 import Drawer from 'material-ui/Drawer';
@@ -158,11 +162,11 @@ class Navbar extends React.Component {
                     <div className={classes.toolbar} />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        {/* <Route exact path="/page" component={Page} />
-                        <Route exact path="/form" component={Form} />
+                        {/* <Route exact path="/page" component={Page} /> */}
+                        <Route exact path="/forms" component={Forms} />
                         <Route exact path="/chart" component={Chart} />
                         <Route exact path="/dialog" component={Dialog} />
-                        <Route exact path="/calendar" component={Calendar} /> */}
+                        <Route exact path="/calendar" component={Calendar} />
                         <Route exact path="**" component={NotFound} />
                     </Switch>
                 </main>
