@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import InboxIcon from 'material-ui-icons/MoveToInbox';
+import Dashboard from 'material-ui-icons/Dashboard';
 import DraftsIcon from 'material-ui-icons/Drafts';
 import StarIcon from 'material-ui-icons/Star';
 import SendIcon from 'material-ui-icons/Send';
@@ -13,7 +14,7 @@ export const mailFolderListItems = (
   <div>
     <Link to='/'><ListItem button>
       <ListItemIcon>
-        <InboxIcon />
+        <Dashboard />
       </ListItemIcon>
       <ListItemText primary="Home" />
     </ListItem>
