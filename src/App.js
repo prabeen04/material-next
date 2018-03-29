@@ -10,15 +10,15 @@ class App extends Component {
     return (
       <div>
       <Navbar/>
-        <Switch>
-           <Route exact path="/" component={Home} />
-       {/*<Route exact path="/page" component={Page} />
+        {/* <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/page" component={Page} />
           <Route exact path="/form" component={Form} />
           <Route exact path="/chart" component={Chart} />
           <Route exact path="/dialog" component={Dialog} />
-          <Route exact path="/calendar" component={Calendar} /> */}
+          <Route exact path="/calendar" component={Calendar} />
           <Route exact path="**" component={NotFound} />
-        </Switch>
+        </Switch> */}
       </div>
     );
   }
