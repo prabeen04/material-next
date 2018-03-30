@@ -12,6 +12,12 @@ import moment from 'moment';
 import { myEventList } from './myEventList';
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 BigCalendar.momentLocalizer(moment);
+
+const customContentStyle = {
+  width: '100%',
+  maxWidth: 'none',
+};
+
 class Calendar extends Component {
   constructor(props) {
     super(props)
@@ -35,31 +41,33 @@ class Calendar extends Component {
       end: slot.end
     })
     this.handleClickOpen()
-    console.log(slot.start)
+    console.log(slot.end)
   }
   render() {
     return (
       <div style={{ height: '520px' }}>
-        <Button onClick={this.handleClickOpen}>Open form dialog</Button>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
+          contentStyle={customContentStyle}
         >
           <DialogTitle id="form-dialog-title"> Schedule your Events</DialogTitle>
           <DialogContent>
             <TextField
               margin="dense"
-              id="name"
+              id="startDate"
               label="Start Date"
               type="text"
+              value={this.state.start}
               fullWidth
             />
             <TextField
               margin="dense"
-              id="name"
+              id="endDate"
               label="End Date"
               type="text"
+              value={this.state.end}
               fullWidth
             />
           </DialogContent>
@@ -75,8 +83,7 @@ class Calendar extends Component {
         <BigCalendar
           events={myEventList}
           popup={true}
-          startAccessor='startDate'
-          endAccessor='endDate'
+          defaultDate={new Date()}
           selectable={true}
           onSelecting={(range) => console.log(range)}
           onSelectSlot={(slotInfo) => this.handleSelectSlot(slotInfo)}
