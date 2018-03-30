@@ -13,10 +13,12 @@ import { myEventList } from './myEventList';
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 BigCalendar.momentLocalizer(moment);
 class Calendar extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
+      start: '',
+      end: ''
     }
     this.handleSelectSlot = this.handleSelectSlot.bind(this);
   }
@@ -27,30 +29,37 @@ class Calendar extends Component {
   handleClose = () => {
     this.setState({ open: false });
   };
-  handleSelectSlot =(slot) => {
+  handleSelectSlot = (slot) => {
+    this.setState({
+      start: slot.start,
+      end: slot.end
+    })
+    this.handleClickOpen()
     console.log(slot.start)
-  }  
+  }
   render() {
     return (
-      <div style={{height: '520px'}}>
-      <Button onClick={this.handleClickOpen}>Open form dialog</Button>
+      <div style={{ height: '520px' }}>
+        <Button onClick={this.handleClickOpen}>Open form dialog</Button>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+          <DialogTitle id="form-dialog-title"> Schedule your Events</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              To subscribe to this website, please enter your email address here. We will send
-              updates occationally.
-            </DialogContentText>
             <TextField
-              autoFocus
               margin="dense"
               id="name"
-              label="Email Address"
-              type="email"
+              label="Start Date"
+              type="text"
+              fullWidth
+            />
+            <TextField
+              margin="dense"
+              id="name"
+              label="End Date"
+              type="text"
               fullWidth
             />
           </DialogContent>
@@ -59,11 +68,11 @@ class Calendar extends Component {
               Cancel
             </Button>
             <Button onClick={this.handleClose} color="primary">
-              Subscribe
+              Submit
             </Button>
           </DialogActions>
         </Dialog>
-       <BigCalendar
+        <BigCalendar
           events={myEventList}
           popup={true}
           startAccessor='startDate'
