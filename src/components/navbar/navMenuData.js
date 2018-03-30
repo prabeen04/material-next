@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import InboxIcon from 'material-ui-icons/MoveToInbox';
 import Dashboard from 'material-ui-icons/Dashboard';
+import TodayIcon from 'material-ui-icons/Today';
 import DraftsIcon from 'material-ui-icons/Drafts';
 import StarIcon from 'material-ui-icons/Star';
 import SendIcon from 'material-ui-icons/Send';
@@ -54,12 +55,13 @@ export const otherMailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Charts" />
     </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <DeleteIcon />
+    <Link to="/calendar"> <ListItem button>
+     <ListItemIcon>
+        <TodayIcon />
       </ListItemIcon>
       <ListItemText primary="Calendar" />
     </ListItem>
+    </Link>
     <ListItem button>
       <ListItemIcon>
         <ReportIcon />
